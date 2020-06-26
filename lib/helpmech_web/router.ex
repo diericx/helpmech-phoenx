@@ -20,6 +20,15 @@ defmodule HelpmechWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/private", PageController, :private
+  end
+
+  scope "/forum", HelpmechWeb do
+    pipe_through :browser
+
+    resources "/posts", PostsController do
+      resources "/replies", RepliesController
+    end
   end
 
   # Other scopes may use custom stacks.
