@@ -26,9 +26,7 @@ defmodule HelpmechWeb.Router do
   scope "/forum", HelpmechWeb do
     pipe_through :browser
 
-    resources "/posts", PostsController do
-      resources "/replies", RepliesController
-    end
+    resources "/threads", ThreadController
   end
 
   # Other scopes may use custom stacks.
